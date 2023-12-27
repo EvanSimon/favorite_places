@@ -81,7 +81,7 @@ class _LocationInputState extends State<LocationInput> {
 
   @override
   Widget build(BuildContext context) {
-    Widget _previewContent = Text(
+    Widget previewContent = Text(
       'No location chosen',
       textAlign: TextAlign.center,
       style: Theme.of(context).textTheme.bodyLarge!.copyWith(
@@ -90,7 +90,7 @@ class _LocationInputState extends State<LocationInput> {
     );
 
     if (_pickedLocation != null) {
-      _previewContent = Image.network(
+      previewContent = Image.network(
         locationImage,
         fit: BoxFit.cover,
         width: double.infinity,
@@ -99,7 +99,7 @@ class _LocationInputState extends State<LocationInput> {
     }
 
     if (_isGettingLocation) {
-      _previewContent = const CircularProgressIndicator();
+      previewContent = const CircularProgressIndicator();
     }
 
     return Column(
@@ -114,7 +114,7 @@ class _LocationInputState extends State<LocationInput> {
               color: Theme.of(context).colorScheme.primary.withOpacity(0.2),
             ),
           ),
-          child: _previewContent,
+          child: previewContent,
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,

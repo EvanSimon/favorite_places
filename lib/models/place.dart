@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'package:uuid/uuid.dart';
 
-const uuid = const Uuid();
+const uuid = Uuid();
 
 class PlaceLocation {
   const PlaceLocation({
